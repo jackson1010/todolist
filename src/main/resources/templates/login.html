@@ -1,0 +1,34 @@
+<!--this is not required as login page is provided by spring security-->
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+</html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h1>Login</h1>
+
+    <!--checks if msg ==null and prints nothing, if not prints the error msg-->
+    <pre th:text="${errorMessage != null} ? ${errorMessage} : '' "></pre>
+
+    <!--need method ="post" to prevent the input data from sent as part of URL, canot use Rqeust method get, which is defualt -->
+    <form method="post">
+      Name: <input type="text" name="name">
+      Password: <input type="password" name="password">
+      <input type="submit">
+    </form>
+  </div>
+</body>
+
+</html>
